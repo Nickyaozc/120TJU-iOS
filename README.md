@@ -40,8 +40,8 @@ The iOS client for the 120th anniversary of Tianjin University
 
 ```JSON
 {
-    “uid”: 1234,
-    “user_name”: “xiaoming”
+    "uid": 1234,
+    "user_name": "xiaoming"
 }
 ```
 
@@ -65,7 +65,7 @@ The iOS client for the 120th anniversary of Tianjin University
 具体的查阅相关文档。主要有两点：
 
 * Swift 调用 Objective-C，头文件为 TJU120-Bridging-Header.h
-* Objective-C 调用 Swift，需要 `#import “TJU120-Swift.h”`，尽管你并不能看到这个文件
+* Objective-C 调用 Swift，需要 `#import "TJU120-Swift.h"`，尽管你并不能看到这个文件
 
 同时注意 Swift 和 Objective-C 类型转换，比如 id 和 AnyObject。
 
