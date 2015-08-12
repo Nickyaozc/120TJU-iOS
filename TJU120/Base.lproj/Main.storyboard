@@ -116,7 +116,6 @@
         <!--论坛-->
         <scene sceneID="ZcA-sx-ho9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0qi-cx-ziU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="kWx-46-lyo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="论坛" id="d8c-v2-ML9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="w9R-70-wfq">
@@ -127,6 +126,7 @@
                         <segue destination="nCd-RT-WH5" kind="relationship" relationship="rootViewController" id="bmo-M4-vUj"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0qi-cx-ziU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1039" y="1476"/>
         </scene>

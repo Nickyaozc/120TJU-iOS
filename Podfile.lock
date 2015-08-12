@@ -21,16 +21,19 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - FIR.im (1.2.0)
+  - MJExtension (2.5.6)
   - SVPullToRefresh (0.4.1)
 
 DEPENDENCIES:
   - AFNetworking
   - FIR.im (~> 1.2.0)
+  - MJExtension
   - SVPullToRefresh
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   FIR.im: e5c7367a35adcd796f30f176f059356c330c0c2e
+  MJExtension: 5ea3e326162ccc07c60afe8cc36c936bba20d0d5
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.38.2

@@ -1,4 +1,5 @@
-# 120TJU-iOS
+120TJU-iOS
+======================
 The iOS client for the 120th anniversary of Tianjin University
 
 # 简介
@@ -60,6 +61,22 @@ The iOS client for the 120th anniversary of Tianjin University
 
 你可以自己写 NSDictionary -> Model 的转换，也可以使用 [MJExtension](https://github.com/CoderMJLee/MJExtension) 进行转换。
 
+## Data Manager
+
+不要直接在 ViewController 里使用网络交互，通过处理数据的 DataManager 来把处理好的数据传给 ViewController 更新 View。建议该类使用闭包去写，配合 AFNetworking 的方法分别对成功和失败的情况进行处理。例如：
+
+Objective-C
+
+```objc
++ (void)getContentByIndex:(NSInteger)index success:(void(^)(NSString *content))success failure:(void(^)(NSString *error))failure { };
+```
+
+Swift
+
+```swift
+class func getContentByIndex(index: Int, success: String -> (), failure: String -> ()) { }
+```
+
 ## Objective-C 与 Swift 混编
 
 具体的查阅相关文档。主要有两点：
@@ -68,6 +85,25 @@ The iOS client for the 120th anniversary of Tianjin University
 * Objective-C 调用 Swift，需要 `#import "TJU120-Swift.h"`，尽管你并不能看到这个文件
 
 同时注意 Swift 和 Objective-C 类型转换，比如 id 和 AnyObject。
+
+## 单例模式
+
+在项目的 `TJU120/Model/Singleton` 目录下给你们加了一个单例模式实现。单例模式一般用于保存在多个类间共享的、通常只维持一份的实例。使用时首先把需要的变量定义在 `data.h` 中：
+
+```objc
+#import <Foundation/Foundation.h>
+
+@interface data : NSObject
+
+// 下面是定义的单例变量
+@property (strong, nonatomic) NSString *singletonVariable;
+
++ (data *)shareInstance;
+
+@end
+```
+
+调用时通过 `[data shareInstance].singletonVariable` 来使用。
 
 ## Git
 
@@ -106,3 +142,4 @@ The iOS client for the 120th anniversary of Tianjin University
 * 花括号于代码同一行开始，另起一行结束
 * 类方法和实例方法符号后有一个空格。例：`- (void)testFunction;`
 * 较长的 NSDictionary 将每一个键值对另起一行
+* 建议下拉刷新和上滑加载使用 [SVPullToRefresh](https://github.com/samvermette/SVPullToRefresh) 具体参见该项目文档
