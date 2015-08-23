@@ -18,7 +18,6 @@ class TalkViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.title = "论坛"
-        self.navigationController?.hidesBarsOnSwipe = true
         
         webView = WKWebView(frame: self.view.bounds)
         webView.clipsToBounds = false

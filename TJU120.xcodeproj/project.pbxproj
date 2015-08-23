@@ -18,6 +18,15 @@
 		E9203E631B5E7D1500C17F10 /* TalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9203E621B5E7D1500C17F10 /* TalkViewController.swift */; };
 		E9203E651B5E82B700C17F10 /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9203E641B5E82B700C17F10 /* DonateViewController.swift */; };
 		E9203E691B5E87D400C17F10 /* data.m in Sources */ = {isa = PBXBuildFile; fileRef = E9203E681B5E87D400C17F10 /* data.m */; };
+		E9F2BFB01B89BD3300C16F26 /* NewsTitleData.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2BFAF1B89BD3300C16F26 /* NewsTitleData.m */; };
+		E9F2BFB31B89BEA000C16F26 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2BFB21B89BEA000C16F26 /* NewsTableViewController.swift */; };
+		E9F2BFB61B89BF2C00C16F26 /* NewsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2BFB51B89BF2C00C16F26 /* NewsDataManager.swift */; };
+		E9F2BFB81B89C3FC00C16F26 /* MsgDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2BFB71B89C3FC00C16F26 /* MsgDisplay.swift */; };
+		E9F2BFBA1B89CD2500C16F26 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2BFB91B89CD2500C16F26 /* NewsDetailViewController.swift */; };
+		E9F2BFC11B89CDAD00C16F26 /* bootstrap.css in Resources */ = {isa = PBXBuildFile; fileRef = E9F2BFBB1B89CDAD00C16F26 /* bootstrap.css */; };
+		E9F2BFC21B89CDAD00C16F26 /* bootstrap.min.js in Resources */ = {isa = PBXBuildFile; fileRef = E9F2BFBC1B89CDAD00C16F26 /* bootstrap.min.js */; };
+		E9F2BFC51B89CDD100C16F26 /* FrontEndConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2BFC41B89CDD100C16F26 /* FrontEndConvertor.swift */; };
+		E9F2BFC71B89DC8900C16F26 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2BFC61B89DC8900C16F26 /* NewsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +62,16 @@
 		E9203E641B5E82B700C17F10 /* DonateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonateViewController.swift; sourceTree = "<group>"; };
 		E9203E671B5E87D400C17F10 /* data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = data.h; sourceTree = "<group>"; };
 		E9203E681B5E87D400C17F10 /* data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = data.m; sourceTree = "<group>"; };
+		E9F2BFAE1B89BD3300C16F26 /* NewsTitleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTitleData.h; sourceTree = "<group>"; };
+		E9F2BFAF1B89BD3300C16F26 /* NewsTitleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTitleData.m; sourceTree = "<group>"; };
+		E9F2BFB21B89BEA000C16F26 /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		E9F2BFB51B89BF2C00C16F26 /* NewsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDataManager.swift; sourceTree = "<group>"; };
+		E9F2BFB71B89C3FC00C16F26 /* MsgDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgDisplay.swift; sourceTree = "<group>"; };
+		E9F2BFB91B89CD2500C16F26 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		E9F2BFBB1B89CDAD00C16F26 /* bootstrap.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.css; sourceTree = "<group>"; };
+		E9F2BFBC1B89CDAD00C16F26 /* bootstrap.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bootstrap.min.js; sourceTree = "<group>"; };
+		E9F2BFC41B89CDD100C16F26 /* FrontEndConvertor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontEndConvertor.swift; sourceTree = "<group>"; };
+		E9F2BFC61B89DC8900C16F26 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +164,10 @@
 		E9203E581B5E765F00C17F10 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E9F2BFC41B89CDD100C16F26 /* FrontEndConvertor.swift */,
+				E9F2BFB71B89C3FC00C16F26 /* MsgDisplay.swift */,
+				E9F2BFB11B89BE1E00C16F26 /* Data Model */,
+				E9F2BFB41B89BF0B00C16F26 /* Data Manager */,
 				E9203E661B5E87B300C17F10 /* Singleton */,
 			);
 			name = Model;
@@ -153,6 +176,7 @@
 		E9203E591B5E766400C17F10 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E9F2BFC61B89DC8900C16F26 /* NewsTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -161,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				E9203E3C1B5E761900C17F10 /* Main.storyboard */,
+				E9F2BFB21B89BEA000C16F26 /* NewsTableViewController.swift */,
+				E9F2BFB91B89CD2500C16F26 /* NewsDetailViewController.swift */,
 				E9203E621B5E7D1500C17F10 /* TalkViewController.swift */,
 				E9203E641B5E82B700C17F10 /* DonateViewController.swift */,
 			);
@@ -182,6 +208,8 @@
 		E9203E5C1B5E769400C17F10 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E9F2BFBB1B89CDAD00C16F26 /* bootstrap.css */,
+				E9F2BFBC1B89CDAD00C16F26 /* bootstrap.min.js */,
 				E9203E3F1B5E761900C17F10 /* Images.xcassets */,
 			);
 			name = Resource;
@@ -194,6 +222,23 @@
 				E9203E681B5E87D400C17F10 /* data.m */,
 			);
 			name = Singleton;
+			sourceTree = "<group>";
+		};
+		E9F2BFB11B89BE1E00C16F26 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9F2BFAE1B89BD3300C16F26 /* NewsTitleData.h */,
+				E9F2BFAF1B89BD3300C16F26 /* NewsTitleData.m */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		E9F2BFB41B89BF0B00C16F26 /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E9F2BFB51B89BF2C00C16F26 /* NewsDataManager.swift */,
+			);
+			name = "Data Manager";
 			sourceTree = "<group>";
 		};
 		FF1BCC3B4ACC76FF18E51365 /* Frameworks */ = {
@@ -289,6 +334,8 @@
 			files = (
 				E9203E3E1B5E761900C17F10 /* Main.storyboard in Resources */,
 				E9203E431B5E761900C17F10 /* LaunchScreen.xib in Resources */,
+				E9F2BFC21B89CDAD00C16F26 /* bootstrap.min.js in Resources */,
+				E9F2BFC11B89CDAD00C16F26 /* bootstrap.css in Resources */,
 				E9203E401B5E761900C17F10 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,8 +389,15 @@
 			files = (
 				E9203E691B5E87D400C17F10 /* data.m in Sources */,
 				E9203E381B5E761900C17F10 /* AppDelegate.m in Sources */,
+				E9F2BFC71B89DC8900C16F26 /* NewsTableViewCell.swift in Sources */,
+				E9F2BFB61B89BF2C00C16F26 /* NewsDataManager.swift in Sources */,
+				E9F2BFB81B89C3FC00C16F26 /* MsgDisplay.swift in Sources */,
+				E9F2BFBA1B89CD2500C16F26 /* NewsDetailViewController.swift in Sources */,
+				E9F2BFB01B89BD3300C16F26 /* NewsTitleData.m in Sources */,
 				E9203E631B5E7D1500C17F10 /* TalkViewController.swift in Sources */,
+				E9F2BFC51B89CDD100C16F26 /* FrontEndConvertor.swift in Sources */,
 				E9203E351B5E761900C17F10 /* main.m in Sources */,
+				E9F2BFB31B89BEA000C16F26 /* NewsTableViewController.swift in Sources */,
 				E9203E651B5E82B700C17F10 /* DonateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +532,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TJU120/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TJU120/WXSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TJU120/TJU120-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -492,6 +550,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TJU120/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TJU120/WXSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TJU120/TJU120-Bridging-Header.h";
 			};
