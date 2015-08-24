@@ -8,7 +8,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="bAJ-Wl-HAL">
             <objects>
-                <tabBarController id="lh5-1k-OUC" sceneMemberID="viewController">
+                <tabBarController id="lh5-1k-OUC" customClass="TabBarController" customModule="TJU120" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="JEq-gd-to0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>

@@ -175,6 +175,7 @@ class NewsTableViewController: UITableViewController {
             var detailViewController = segue.destinationViewController as! NewsDetailViewController
             detailViewController.index = self.selectedCellIndex
             detailViewController.title = self.selectedTitle
+            detailViewController.hidesBottomBarWhenPushed = true
         }
     }
 

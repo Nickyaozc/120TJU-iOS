@@ -27,6 +27,8 @@
 		E9F2BFC21B89CDAD00C16F26 /* bootstrap.min.js in Resources */ = {isa = PBXBuildFile; fileRef = E9F2BFBC1B89CDAD00C16F26 /* bootstrap.min.js */; };
 		E9F2BFC51B89CDD100C16F26 /* FrontEndConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2BFC41B89CDD100C16F26 /* FrontEndConvertor.swift */; };
 		E9F2BFC71B89DC8900C16F26 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2BFC61B89DC8900C16F26 /* NewsTableViewCell.swift */; };
+		E9FE84751B8B158700482AE4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FE84741B8B158700482AE4 /* TabBarController.swift */; };
+		E9FE84771B8B16E200482AE4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9FE84761B8B16E200482AE4 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		E9F2BFBC1B89CDAD00C16F26 /* bootstrap.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bootstrap.min.js; sourceTree = "<group>"; };
 		E9F2BFC41B89CDD100C16F26 /* FrontEndConvertor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontEndConvertor.swift; sourceTree = "<group>"; };
 		E9F2BFC61B89DC8900C16F26 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		E9FE84741B8B158700482AE4 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E9FE84761B8B16E200482AE4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 		E9203E321B5E761900C17F10 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E9FE84761B8B16E200482AE4 /* Localizable.strings */,
 				E9203E331B5E761900C17F10 /* Info.plist */,
 				E9203E341B5E761900C17F10 /* main.m */,
 			);
@@ -185,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				E9203E3C1B5E761900C17F10 /* Main.storyboard */,
+				E9FE84741B8B158700482AE4 /* TabBarController.swift */,
 				E9F2BFB21B89BEA000C16F26 /* NewsTableViewController.swift */,
 				E9F2BFB91B89CD2500C16F26 /* NewsDetailViewController.swift */,
 				E9203E621B5E7D1500C17F10 /* TalkViewController.swift */,
@@ -333,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9203E3E1B5E761900C17F10 /* Main.storyboard in Resources */,
+				E9FE84771B8B16E200482AE4 /* Localizable.strings in Resources */,
 				E9203E431B5E761900C17F10 /* LaunchScreen.xib in Resources */,
 				E9F2BFC21B89CDAD00C16F26 /* bootstrap.min.js in Resources */,
 				E9F2BFC11B89CDAD00C16F26 /* bootstrap.css in Resources */,
@@ -388,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9203E691B5E87D400C17F10 /* data.m in Sources */,
+				E9FE84751B8B158700482AE4 /* TabBarController.swift in Sources */,
 				E9203E381B5E761900C17F10 /* AppDelegate.m in Sources */,
 				E9F2BFC71B89DC8900C16F26 /* NewsTableViewCell.swift in Sources */,
 				E9F2BFB61B89BF2C00C16F26 /* NewsDataManager.swift in Sources */,

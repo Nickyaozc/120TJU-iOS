@@ -1,28 +1,19 @@
 //
-//  NewsDetailViewController.swift
+//  TabBarController.swift
 //  
 //
-//  Created by Qin Yubo on 15/8/23.
+//  Created by Qin Yubo on 15/8/24.
 //
 //
 
 import UIKit
 
-class NewsDetailViewController: UIViewController, UIWebViewDelegate {
-    
-    @IBOutlet var webView: UIWebView!
-    
-    var index: String = ""
+class TabBarController: BFPaperTabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        NewsDataManager.getNewsDetail(index, success: { html in
-            self.webView.loadHTMLString(html, baseURL: nil)
-        }, failure: { error in
-            MsgDisplay.showErrorMessage(error)
-        })
         
     }
 
@@ -30,8 +21,6 @@ class NewsDetailViewController: UIViewController, UIWebViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
     
 
     /*

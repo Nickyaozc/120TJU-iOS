@@ -5,3 +5,4 @@
 #import "SVPullToRefresh.h"
 #import "NewsTitleData.h"
 #import <CRToast/CRToast.h>
+#import "BFPaperTabBarController.h"
