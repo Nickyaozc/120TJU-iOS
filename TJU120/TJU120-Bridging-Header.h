@@ -4,5 +4,6 @@
 #import "AFNetworking.h"
 #import "SVPullToRefresh.h"
 #import "NewsTitleData.h"
+#import "ActivityTitleData.h"
 #import <CRToast/CRToast.h>
 #import "BFPaperTabBarController.h"
