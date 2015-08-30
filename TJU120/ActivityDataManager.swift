@@ -9,11 +9,15 @@
 import UIKit
 
 class ActivityDataManager: NSObject {
-   
-    class func getActivityData(type: Int, page: Int, success: Array<ActivityTitleData> -> () , failure: String -> ()) {
+    
+    
+    
+    class func getActivityData(collegeAdd: String, type: Int, page: Int, success: Array<ActivityTitleData> -> () , failure: String -> ()) {
+        
+        
         var manager = AFHTTPRequestOperationManager()
         manager.responseSerializer.acceptableContentTypes = NSSet(object: "text/html") as Set<NSObject>
-        var typeAddress = (type == 0 ? "school" : "jxgcxy")
+        var typeAddress = (type == 0 ? "school" : collegeAdd)
         manager.GET("http://120news.wenjin.in/index.php?s=/Article/lists/category/\(typeAddress).html&p=\(page)", parameters: nil, success: {(operation, responseObject) in
             if responseObject["errno"] as! Int == 1 {
                 var dataArr = ActivityTitleData.objectArrayWithKeyValuesArray(responseObject["rsm"]) as AnyObject as! [ActivityTitleData]

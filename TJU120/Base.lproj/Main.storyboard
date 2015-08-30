@@ -215,7 +215,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityTableCell" rowHeight="82" id="C5G-YY-CYH" customClass="ActivityTableViewCell" customModule="TJU120" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityTableCell" rowHeight="100" id="C5G-YY-CYH" customClass="ActivityTableViewCell" customModule="TJU120" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C5G-YY-CYH" id="LXr-vF-UGk">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -231,14 +231,38 @@
                                             <rect key="frame" x="8" y="29" width="85" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="地点：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rva-nJ-h0W">
-                                            <rect key="frame" x="8" y="51" width="39" height="16"/>
+                                            <rect key="frame" x="8" y="47" width="39" height="16"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKW-H1-eNu">
+                                            <rect key="frame" x="51" y="29" width="150" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="来源：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKK-pn-i86">
+                                            <rect key="frame" x="8" y="62" width="39" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfS-rC-jY9">
+                                            <rect key="frame" x="51" y="59" width="155" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fe-cf-ml5">
+                                            <rect key="frame" x="51" y="44" width="150" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -246,6 +270,9 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
+                                    <outlet property="placeLabel" destination="1fe-cf-ml5" id="ey6-Hy-Ijh"/>
+                                    <outlet property="sourceLabel" destination="hfS-rC-jY9" id="1DR-ml-gLE"/>
+                                    <outlet property="startTimeLabel" destination="LKW-H1-eNu" id="iiS-JP-thI"/>
                                     <outlet property="titleLabel" destination="Yip-yu-yOL" id="F8t-OX-qTV"/>
                                     <segue destination="IM6-IR-DOs" kind="show" identifier="pushActivityDetail" trigger="accessoryAction" id="GgA-j6-fAg"/>
                                 </connections>
@@ -268,6 +295,7 @@
                             </segments>
                             <connections>
                                 <action selector="segmentedChanged:" destination="wET-ac-PJK" eventType="valueChanged" id="26J-Ul-dJr"/>
+                                <action selector="segmentedValueChanged:" destination="wET-ac-PJK" eventType="valueChanged" id="xUE-ft-dCV"/>
                             </connections>
                         </segmentedControl>
                     </navigationItem>

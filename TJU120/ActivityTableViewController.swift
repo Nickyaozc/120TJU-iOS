@@ -7,12 +7,12 @@
 //
 
 import UIKit
-var collegeTitleFixedView = CollegeTitleFixedView()
-class ActivityTableViewController: UITableViewController{
+
+class ActivityTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
 
     @IBOutlet weak var tpyeSegmentedControl: UISegmentedControl!
-    
+    var collegeTitleFixedView = CollegeTitleFixedView()
     var dataArr = [ActivityTitleData]()
     var currentPage = 1
     var type = 0
@@ -21,6 +21,9 @@ class ActivityTableViewController: UITableViewController{
     var collegeLabel:UILabel!
     var pickerBtn:UIButton!
     var collegePicker:UIPickerView!
+    var CollegeArr = ["机械学院", "经管学部", "软件学院"]
+    var collegeStr:String!
+    var collegeAddress = "jxgcxy"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +50,124 @@ class ActivityTableViewController: UITableViewController{
             weakSelf.loadMore()
         })
         
-        //刷新获取数据
+        //add collegeLabel
+        collegeLabel = UILabel(frame:CGRect(x: 0, y: 0, width: 100, height: 20))
+        collegeLabel.center = CGPointMake(self.view.frame.size.width/2, collegeTitleFixedView.frame.size.height/2)
+        collegeLabel.text = "机械学院"
+        collegeLabel.textAlignment = NSTextAlignment.Center
+        collegeLabel.font = UIFont.boldSystemFontOfSize(18)
+        collegeTitleFixedView.addSubview(collegeLabel)
+        
+        //add pickerBtn
+        pickerBtn = UIButton(frame:CGRectMake(0, 0, 60, 20))
+        pickerBtn.center = CGPointMake(self.view.frame.size.width-40, collegeTitleFixedView.frame.size.height/2)
+        pickerBtn.setTitle("选择", forState: UIControlState.Normal)
+        pickerBtn.setTitle("选择", forState: UIControlState.Highlighted)
+        pickerBtn.addTarget(self, action: "buttonIsPressed:", forControlEvents: UIControlEvents.TouchDown)
+        pickerBtn.addTarget(self, action: "showPicker:", forControlEvents: UIControlEvents.TouchUpInside)
+        collegeTitleFixedView.addSubview(pickerBtn)
+        
+        //声明
+        collegeTitleFixedView.backgroundColor = UIColor.cyanColor()
+        collegeTitleFixedView.frame = CGRectMake(0, -40, self.view.frame.size.width, 40)
+        
+        var index = tpyeSegmentedControl.selectedSegmentIndex
+                //刷新获取数据
         self.refreshData()
     }
+    
+    
+    func buttonIsPressed(sender:UIButton){
+        println("Button is Pressed.")
+    }
+    
+    func buttonIsTaped(sender:UIButton){
+        println("Button is Taped")
+    }
+    
+    func showPicker(sender:UIButton){
+        var alert = UIAlertController(title:"",message:"\n\n\n\n\n\n\n\n\n", preferredStyle:UIAlertControllerStyle.ActionSheet)
+        
+        //Create a frame (placeholder/wrapper) for the picker and then create the picker
+        var pickerFrame: CGRect = CGRectMake(17, 52, 270, 100)
+        var picker: UIPickerView = UIPickerView(frame:pickerFrame)
+        
+        //set the pickers datasourse and delegate
+        picker.delegate = self
+        picker.dataSource = self
+        
+        //add the picker to the alertcontroller
+        alert.view.addSubview(picker)
+        
+        //create the toolbar view which will hold our 2 buttons
+        var toolFrame = CGRectMake(17, 5, 270, 45)
+        var toolView: UIView = UIView(frame: toolFrame)
+        
+        //add buttons to the view
+        var buttonCancelFrame: CGRect = CGRectMake(0, 7, 100, 30)
+        
+        //create the cancel button
+        var buttonCancel: UIButton = UIButton(frame:buttonCancelFrame)
+        buttonCancel.setTitle("Cancel", forState: UIControlState.Normal);
+        buttonCancel.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal);
+        toolView.addSubview(buttonCancel); //add it to the toolView
+    
+        //Add the target - target, function to call, the event witch will trigger the function call
+        buttonCancel.addTarget(self, action: "cancelSelection:", forControlEvents: UIControlEvents.TouchDown)
+        
+        //add buttons to the view
+        var buttonOkFrame: CGRect = CGRectMake(170, 7, 100, 30)
+        
+        //Create the Select button & set the title
+        var buttonOk: UIButton = UIButton(frame: buttonOkFrame)
+        buttonOk.setTitle("Select", forState: UIControlState.Normal)
+        buttonOk.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        toolView.addSubview(buttonOk) //add to the subview
+        
+        buttonOk.addTarget(self, action: "saveCollege:", forControlEvents: UIControlEvents.TouchDown)
+        
+        //add the toolbar to the alert controller
+        alert.view.addSubview(toolView)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func saveCollege(sender:UIButton){
+        println("选择")
+        self.dismissViewControllerAnimated(true, completion: nil)
+        collegeLabel.text = collegeStr
+        switch collegeStr{
+            case "机械学院": collegeAddress = "jxgcxy"
+            case "经管学部": collegeAddress = "glyjjxb"
+            default: collegeAddress = "rjgcxy"
+        }
+        self.refreshData()
+        
+    
+        
+    }
+    
+    func cancelSelection(sender:UIButton){
+        println("Cancel")
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return CollegeArr.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return CollegeArr[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        collegeStr = CollegeArr[row]
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -60,32 +178,21 @@ class ActivityTableViewController: UITableViewController{
         
         let senderSegmentedControl = sender as! UISegmentedControl
         type = senderSegmentedControl.selectedSegmentIndex
-        
+       
         //给CollegeTitleFixedView留出位置
         if type == 0{
+            collegeTitleFixedView.removeFromSuperview()
             self.tableView.frame = CGRectMake(0, 0, self.tableView.frame.size.width, tableView.frame.size.height)
         }else{
             self.tableView.frame = CGRectMake(0, 40, self.tableView.frame.size.width, tableView.frame.size.height)
             //添加CollegeTitleFixedView
-            //Declare FixedView
-            collegeTitleFixedView.backgroundColor = UIColor.cyanColor()
-            collegeTitleFixedView.frame = CGRectMake(0, -40, self.view.frame.size.width, 40)
             self.view.addSubview(collegeTitleFixedView.self)
-            
-            //添加学院名称标签
-//            collegeLabel.frame = CGRectMake(0, 0, 50, 30)
-//            collegeLabel.text = "机械学院"
-//            collegeLabel.textAlignment = NSTextAlignment.Center
-//            collegeLabel.font = UIFont.systemFontOfSize(18)
-//            collegeLabel.backgroundColor = UIColor.whiteColor()
-//            collegeTitleFixedView.addSubview(collegeLabel)
-//            pickerBtn.frame = CGRectMake(0, 0, 40, 20)
-//            pickerBtn.setTitle("选择", forState: UIControlState.Normal)
-//            pickerBtn.setTitle("选择", forState: UIControlState.Highlighted)
-//            collegeTitleFixedView.addSubview(pickerBtn)
-            
         }
+        
         self.refreshData()
+    }
+    
+    @IBAction func segmentedValueChanged(sender: AnyObject) {
     }
     
     
@@ -117,7 +224,7 @@ class ActivityTableViewController: UITableViewController{
     }
     
     private func getData() {
-        ActivityDataManager.getActivityData(type, page: currentPage, success: { arr in
+        ActivityDataManager.getActivityData(collegeAddress, type: type, page: currentPage, success: { arr in
             if self.currentPage == 1 {
                 self.dataArr = arr
             } else if self.currentPage > 1 {
@@ -171,6 +278,9 @@ class ActivityTableViewController: UITableViewController{
         
         let tmpData = dataArr[indexPath.row]
         cell.titleLabel.text = tmpData.title
+        cell.startTimeLabel.text = tmpData.start_time
+        cell.placeLabel.text = tmpData.at_place
+        cell.sourceLabel.text = tmpData.source
         let date = NSDate(timeIntervalSince1970: (tmpData.create_time as NSString).doubleValue)
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MM月dd日 HH:mm"
@@ -182,7 +292,7 @@ class ActivityTableViewController: UITableViewController{
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let tmpData = dataArr[indexPath.row]
         self.selectedCellIndex = tmpData.index
-        self.selectedTitle = tmpData.title
+        
         self.performSegueWithIdentifier("pushActivityDetail", sender: self)
     }
     /*

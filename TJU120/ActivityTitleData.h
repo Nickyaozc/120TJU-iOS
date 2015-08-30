@@ -20,5 +20,6 @@
 @property (strong, nonatomic) NSString *title;
 //@property (strong, nonatomic) NSString *uid;
 @property (strong, nonatomic) NSString *start_time;
-
+@property (strong, nonatomic) NSString *at_place;
+@property (strong, nonatomic) NSString *source;
 @end

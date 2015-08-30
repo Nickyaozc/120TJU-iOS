@@ -12,6 +12,10 @@ class ActivityTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var startTimeLabel: UILabel!
+    @IBOutlet weak var placeLabel: UILabel!
+    
+    @IBOutlet weak var sourceLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
