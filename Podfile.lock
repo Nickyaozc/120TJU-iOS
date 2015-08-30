@@ -22,10 +22,10 @@ PODS:
     - AFNetworking/NSURLSession
   - BFPaperTabBarController (2.1.10):
     - UIColor+BFPaperColors
-  - CRToast (0.0.7)
+  - CRToast (0.0.8)
   - FIR.im (1.3.0)
   - JZNavigationExtension (1.2.1)
-  - MJExtension (2.5.8)
+  - MJExtension (2.5.9)
   - SVPullToRefresh (0.4.1)
   - UIColor+BFPaperColors (1.7.1)
 
@@ -41,10 +41,10 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   BFPaperTabBarController: feeb736ab4249226e850ae6cd677697c26158079
-  CRToast: 99a28f4387def43b439ad88f957ce31357ff7373
+  CRToast: b087127369b4c603726ef6249d74d0d737629ab8
   FIR.im: 7529c2457e89a907171139ce6aed0a89ed8e099f
   JZNavigationExtension: 7a0e59bc604587659a9c4d93c0ee4553142e80f8
-  MJExtension: e6f30c738b7618552ee5563fcf4eadf552f997e0
+  MJExtension: 2330aeb6c83428c820749290bf766e81827cda65
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   UIColor+BFPaperColors: b1efa4320e2f56c4b14f73232faf967ba0e5b4a2
 

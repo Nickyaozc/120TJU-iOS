@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20073DFA1B92C8FC0013B612 /* CollegeTitleFixedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20073DF91B92C8FC0013B612 /* CollegeTitleFixedView.swift */; };
 		20F0B2561B91A36900EAB35E /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0B2551B91A36900EAB35E /* ActivityTableViewController.swift */; };
 		20F0B2581B91A54700EAB35E /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0B2571B91A54700EAB35E /* ActivityDetailViewController.swift */; };
 		20F0B25A1B91A5AD00EAB35E /* ActivityDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0B2591B91A5AD00EAB35E /* ActivityDataManager.swift */; };
 		20F0B25D1B91A5DE00EAB35E /* ActivityTitleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F0B25C1B91A5DE00EAB35E /* ActivityTitleData.m */; };
 		20F0B25F1B91A9A400EAB35E /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0B25E1B91A9A400EAB35E /* ActivityTableViewCell.swift */; };
-		20F0B26F1B91F8B600EAB35E /* ActivityHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0B26E1B91F8B600EAB35E /* ActivityHeaderCell.swift */; };
 		5B10E81804EC27269E9BA6C3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF3B7AC6B8688B3F2C46E97 /* libPods.a */; };
 		E9203E351B5E761900C17F10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9203E341B5E761900C17F10 /* main.m */; };
 		E9203E381B5E761900C17F10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9203E371B5E761900C17F10 /* AppDelegate.m */; };
@@ -49,13 +49,13 @@
 
 /* Begin PBXFileReference section */
 		1CF3B7AC6B8688B3F2C46E97 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		20073DF91B92C8FC0013B612 /* CollegeTitleFixedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeTitleFixedView.swift; sourceTree = "<group>"; };
 		20F0B2551B91A36900EAB35E /* ActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
 		20F0B2571B91A54700EAB35E /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
 		20F0B2591B91A5AD00EAB35E /* ActivityDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDataManager.swift; sourceTree = "<group>"; };
 		20F0B25B1B91A5DE00EAB35E /* ActivityTitleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTitleData.h; sourceTree = "<group>"; };
 		20F0B25C1B91A5DE00EAB35E /* ActivityTitleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTitleData.m; sourceTree = "<group>"; };
 		20F0B25E1B91A9A400EAB35E /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
-		20F0B26E1B91F8B600EAB35E /* ActivityHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityHeaderCell.swift; sourceTree = "<group>"; };
 		2F54A3EF442581AB9F84B842 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5A868E28D20C255100210A4E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E9203E2F1B5E761900C17F10 /* TJU120.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TJU120.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,7 +230,7 @@
 			children = (
 				E9F2BFC61B89DC8900C16F26 /* NewsTableViewCell.swift */,
 				20F0B25E1B91A9A400EAB35E /* ActivityTableViewCell.swift */,
-				20F0B26E1B91F8B600EAB35E /* ActivityHeaderCell.swift */,
+				20073DF91B92C8FC0013B612 /* CollegeTitleFixedView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -460,10 +460,10 @@
 				E9F2BFB01B89BD3300C16F26 /* NewsTitleData.m in Sources */,
 				E9203E631B5E7D1500C17F10 /* TalkViewController.swift in Sources */,
 				E9F2BFC51B89CDD100C16F26 /* FrontEndConvertor.swift in Sources */,
-				20F0B26F1B91F8B600EAB35E /* ActivityHeaderCell.swift in Sources */,
 				E9203E351B5E761900C17F10 /* main.m in Sources */,
 				E9F2BFB31B89BEA000C16F26 /* NewsTableViewController.swift in Sources */,
 				20F0B2561B91A36900EAB35E /* ActivityTableViewController.swift in Sources */,
+				20073DFA1B92C8FC0013B612 /* CollegeTitleFixedView.swift in Sources */,
 				E9203E651B5E82B700C17F10 /* DonateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

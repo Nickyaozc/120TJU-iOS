@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class ActivityTableViewController: UITableViewController {
+var collegeTitleFixedView = CollegeTitleFixedView()
+class ActivityTableViewController: UITableViewController{
     
 
     @IBOutlet weak var tpyeSegmentedControl: UISegmentedControl!
@@ -18,10 +18,17 @@ class ActivityTableViewController: UITableViewController {
     var type = 0
     var selectedCellIndex = ""
     var selectedTitle = ""
+    var collegeLabel:UILabel!
+    var pickerBtn:UIButton!
+    var collegePicker:UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //navigationBar颜色
+        self.navigationController?.navigationBar.backgroundColor = UIColor.whiteColor()
+        
+        //？？？
         if self.respondsToSelector("automaticallyAdjustsScrollViewInsets") && self.navigationController!.navigationBar.translucent == true {
             self.automaticallyAdjustsScrollViewInsets = false
             
@@ -29,10 +36,9 @@ class ActivityTableViewController: UITableViewController {
             insets.top = self.navigationController!.navigationBar.bounds.size.height + UIApplication.sharedApplication().statusBarFrame.size.height
             self.tableView.contentInset = insets
             self.tableView.scrollIndicatorInsets = insets
-            
-            
         }
         
+        //???
         weak var weakSelf: ActivityTableViewController! = self
         self.tableView.addPullToRefreshWithActionHandler({
             weakSelf.refreshData()
@@ -41,25 +47,63 @@ class ActivityTableViewController: UITableViewController {
             weakSelf.loadMore()
         })
         
+        //刷新获取数据
         self.refreshData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func segmentedChanged(sender: AnyObject) {
+        
         let senderSegmentedControl = sender as! UISegmentedControl
         type = senderSegmentedControl.selectedSegmentIndex
-        self.refreshData()
         
+        //给CollegeTitleFixedView留出位置
+        if type == 0{
+            self.tableView.frame = CGRectMake(0, 0, self.tableView.frame.size.width, tableView.frame.size.height)
+        }else{
+            self.tableView.frame = CGRectMake(0, 40, self.tableView.frame.size.width, tableView.frame.size.height)
+            //添加CollegeTitleFixedView
+            //Declare FixedView
+            collegeTitleFixedView.backgroundColor = UIColor.cyanColor()
+            collegeTitleFixedView.frame = CGRectMake(0, -40, self.view.frame.size.width, 40)
+            self.view.addSubview(collegeTitleFixedView.self)
+            
+            //添加学院名称标签
+//            collegeLabel.frame = CGRectMake(0, 0, 50, 30)
+//            collegeLabel.text = "机械学院"
+//            collegeLabel.textAlignment = NSTextAlignment.Center
+//            collegeLabel.font = UIFont.systemFontOfSize(18)
+//            collegeLabel.backgroundColor = UIColor.whiteColor()
+//            collegeTitleFixedView.addSubview(collegeLabel)
+//            pickerBtn.frame = CGRectMake(0, 0, 40, 20)
+//            pickerBtn.setTitle("选择", forState: UIControlState.Normal)
+//            pickerBtn.setTitle("选择", forState: UIControlState.Highlighted)
+//            collegeTitleFixedView.addSubview(pickerBtn)
+            
+        }
+        self.refreshData()
     }
     
     
+    //使CollegeTitleFixedView固定
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        if type == 1{
+            var fixedFrame = CGRectMake(0, -40, self.view.frame.size.width, 40)
+            fixedFrame.origin.y = 24 + scrollView.contentOffset.y
+            collegeTitleFixedView.frame = fixedFrame
+            collegeTitleFixedView.backgroundColor = UIColor.cyanColor()
+        }else{
+            collegeTitleFixedView.backgroundColor = UIColor.clearColor()
+            collegeTitleFixedView.frame = CGRectMake(0,-40,self.view.frame.size.width, 40)
+        }
+    }
     
     // MARK: - Table view data source
-
+    
     private func refreshData() {
         currentPage = 1
         dataArr.removeAll(keepCapacity: false)
@@ -100,18 +144,17 @@ class ActivityTableViewController: UITableViewController {
         return 1
     }
 
-    
-    override func tableView(tableView: UITableView, viewForHeaderInSection
-        section: Int) -> UIView? {
-        let headerCell = tableView.dequeueReusableCellWithIdentifier("HeaderCell") as! ActivityHeaderCell
-        headerCell.backgroundColor = UIColor.cyanColor()
-        headerCell.headerLabel.text = "机械学院"
-        if type == 0{
-            return nil
-        }else{
-            return headerCell
-        }
-    }
+//    override func tableView(tableView: UITableView, viewForHeaderInSection
+//        section: Int) -> UIView? {
+//        let headerCell = tableView.dequeueReusableCellWithIdentifier("HeaderCell") as! ActivityHeaderCell
+//        headerCell.backgroundColor = UIColor.cyanColor()
+//        headerCell.headerLabel.text = "机械学院"
+//        if type == 0{
+//            return nil
+//        }else{
+//            return headerCell
+//        }
+//    }
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
